@@ -16,8 +16,6 @@
             }
             .navbar {
                 border-top: 1px solid #000000;
-                margin-top: 0;
-                margin-bottom: 0;
             }
             .equipment-container {
                 font-size: small;
@@ -37,34 +35,30 @@
                 border: 1px solid #383838;
                 border-radius: 10px;
                 text-align: center;
-                padding: 3px;
-                border-spacing: 3px;
+                padding: 5px;
+                margin: -10px;
             }
             .equipment-card img {
-                object-fit: fill;
+                width: 100%;
+                max-height: 120px;
+                object-fit: contain;
             }
             .product {
                 color: rgb(0, 0, 0);
                 font-weight: bold;
                 text-align: left;
-                font-size: x-small;
+                font-size: xx-small;
             }
             .available {
                 color: green;
                 font-weight: bold;
                 text-align: left;
-                font-size: x-small;
+                font-size: xx-small;
                 line-height: 0;
             }
             .borrowed {
                 color: red;
                 font-weight: bold;
-            }
-            .row {
-                display: flex;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 0px; /* Jarak antar card */
-                padding: 10px;
             }
             .book-now {
                 position: fixed;
@@ -106,28 +100,28 @@
                 <p>All list of goods, please tap the goods for start booking</p>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-3 col-md-4 col-lg-3 mb-3">
                     <div class="equipment-card">
                         <img src="Frame 2377.png" alt="Lighting Set">
                         <p class="product">Lighting Set Sony</p>
                         <p class="available">Available</p>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 col-md-4 col-lg-3 mb-3">
                     <div class="equipment-card">
                         <img src="Frame 2377.png" alt="Lighting Set">
                         <p class="product">Lighting Set Sony</p>
                         <p class="available">Available</p>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 col-md-4 col-lg-3 mb-3">
                     <div class="equipment-card">
                         <img src="Frame 2377.png" alt="Lighting Set">
                         <p class="product">Lighting Set Sony</p>
                         <p class="available">Available</p>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 col-md-4 col-lg-3 mb-3">
                     <div class="equipment-card">
                         <img src="Frame 2377.png" alt="Lighting Set">
                         <p class="product">Lighting Set Sony</p>
