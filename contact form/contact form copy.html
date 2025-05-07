@@ -1,0 +1,180 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    function validasi() {
+      var nama = document.getElementById("nama").value;
+      var email = document.getElementById("email").value;
+      var subject = document.getElementById("subject").value;
+      var pesan = document.getElementById("pesan").value;
+
+      if (nama.length == 0) {
+        swal("Pesan!", "Nama harus diisi", "error");
+        document.getElementById("nama").focus();
+        return false; // Menghentikan pengiriman form
+      }
+      if (email.length == 0) {
+        swal("Pesan!", "Email harus diisi", "error");
+        document.getElementById("email").focus();
+        return false; // Menghentikan pengiriman form
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        swal("Pesan!", "Email tidak valid", "error");
+        document.getElementById("email").focus();
+        return false; // Menghentikan pengiriman form
+      }
+      if (subject.length == 0) {
+        swal("Pesan!", "Subject harus diisi", "error");
+        document.getElementById("subject").focus();
+        return false; // Menghentikan pengiriman form
+      }
+      if (pesan.length == 0) {
+        swal("Pesan!", "Pesan harus diisi", "error");
+        document.getElementById("pesan").focus();
+        return false; // Menghentikan pengiriman form
+      }
+      else {
+        // Jika semua validasi berhasil, kirim form
+        swal("Pesan!", "Form berhasil dikirim", "success");
+        return true;
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom underline color for inputs */
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-bottom-color: #1dd28a;
+      box-shadow: 0 1px 0 0 #1dd28a;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-6">
+  <main
+    class="flex flex-col md:flex-row max-w-5xl w-full bg-white shadow-lg rounded-md overflow-hidden">
+    <section class="bg-[#1dd28a] text-white p-10 md:w-1/3 flex flex-col justify-center space-y-6">
+      <h2 class="text-2xl font-normal">Kontak Kami</h2>
+      <p class="text-sm font-semibold leading-relaxed max-w-xs">
+        Head Office
+      </p>
+      <div class="space-y-6">
+        <div class="flex items-center space-x-4">
+          <div
+            class="border border-white rounded-full p-3 flex items-center justify-center">
+            <i class="fas fa-map-marker-alt text-white text-lg"></i>
+          </div>
+          <p class="text-sm font-light">
+            <span class="font-semibold">Alamat:</span> D’Monaco Restaurant
+            Jl. Randugowang, Jatirejo,
+            Sendangadi, Mlati, Sleman,
+            DI Yogyakarta 55285            
+          </p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div
+            class="border border-white rounded-full p-3 flex items-center justify-center">
+            <i class="fas fa-phone-alt text-white text-lg"></i>
+          </div>
+          <p class="text-sm font-light">
+            <span class="font-semibold">Telepon:</span>+62 274 2880 288
+          </p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div
+            class="border border-white rounded-full p-3 flex items-center justify-center"
+          >
+            <i class="fas fa-paper-plane text-white text-lg"></i>
+          </div>
+          <p class="text-sm font-light">
+            <span class="font-semibold">Email:</span> corsec@indobogasukses.com
+          </p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div
+            class="border border-white rounded-full p-3 flex items-center justify-center"
+          >
+            <i class="fas fa-globe text-white text-lg"></i>
+          </div>
+          <p class="text-sm font-light">https://indobogasukses.com/</p>
+        </div>
+      </div>
+    </section>
+    <section class="p-10 md:w-2/3">
+      <h2 class="text-xl font-normal mb-8">Kirim kami pesan!</h2>
+      <form class="space-y-6 max-w-3xl" method="get" onsubmit="return validasi();">
+        <div class="flex flex-col md:flex-row md:space-x-10 space-y-6 md:space-y-0">
+          <div class="flex-1 flex flex-col">
+            <label
+              for="nama"
+              class="text-xs font-extrabold mb-1 uppercase tracking-wide"
+              >Nama</label
+            >
+            <input
+              id="nama"
+              type="text"
+              placeholder="Nama"
+              class="form-control border-b border-gray-300 focus:border-[#1dd28a] text-gray-400 placeholder-gray-400 focus:outline-none"
+            />
+          </div>
+          <div class="flex-1 flex flex-col">
+            <label
+              for="email"
+              class="text-xs font-extrabold mb-1 uppercase tracking-wide"
+              >Email</label
+            >
+            <input
+              id="email"
+              type="email"
+              placeholder="Email"
+              class="form-control border-b border-gray-300 focus:border-[#1dd28a] text-gray-400 placeholder-gray-400 focus:outline-none"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <label
+            for="subject"
+            class="text-xs font-extrabold mb-1 uppercase tracking-wide"
+            >Subject</label
+          >
+          <input
+            id="subject"
+            type="text"
+            placeholder="Subject"
+            class="form-control border-gray-300 focus:border-[#1dd28a] text-gray-400 placeholder-gray-400 focus:outline-none"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label
+            for="pesan"
+            class="text-xs font-extrabold mb-1 uppercase tracking-wide"
+            >Pesan</label
+          >
+          <textarea
+            id="pesan"
+            rows="3"
+            placeholder="Tuliskan pesan disini.."
+            class="form-control border-b border-gray-300 focus:border-[#1dd28a] text-gray-400 placeholder-gray-400 focus:outline-none resize-none"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-[#1dd28a] text-white px-5 py-2 rounded-md shadow-md hover:shadow-lg transition-shadow duration-200 font-semibold"
+          onsubmit="validasis();"
+        >
+          Kirim
+        </button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
